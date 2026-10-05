@@ -1,52 +1,52 @@
-import os
-import sys
+"""Simple calculator application."""
 
 
-def add(a,b):
+def add(first_number, second_number):
     """Add two numbers"""
-    return a+b
+    return first_number + second_number
 
-def subtract(a, b):
+
+def subtract(first_number, second_number):
     """Subtract two numbers"""
-    return a - b
+    return first_number - second_number
 
-def multiply(a,b):
+
+def multiply(first_number, second_number):
     """Multiply two numbers"""
-    return a*b
+    return first_number * second_number
 
-def divide(a, b):
+
+def divide(first_number, second_number):
     """Divide two numbers"""
-    if b==0:
+    if second_number == 0:
         raise ValueError("Cannot divide by zero")
-    return a/b
+    return first_number / second_number
 
 
-def calculate(operation, num1, num2):
+def calculate(operation, first_number, second_number):
     """Perform calculation based on operation"""
-    if operation == 'add':
-        result = add(num1,num2)
-    elif operation == 'subtract':
-        result = subtract(num1, num2)
-    elif operation == 'multiply':
-        result = multiply(num1,num2)
-    elif operation == 'divide':
-        result = divide(num1, num2)
+    if operation == "add":
+        result = add(first_number, second_number)
+    elif operation == "subtract":
+        result = subtract(first_number, second_number)
+    elif operation == "multiply":
+        result = multiply(first_number, second_number)
+    elif operation == "divide":
+        result = divide(first_number, second_number)
     else:
         raise ValueError(f"Unknown operation: {operation}")
-    
+
     return result
 
 
 if __name__ == "__main__":
     print("Simple Calculator")
     print("-" * 20)
-    
-    result1 = calculate('add', 10, 5)
+
+    result1 = calculate("add", 10, 5)
     print(f"10 + 5 = {result1}")
-    
-    result2 = calculate('multiply', 7, 3)
+
+    result2 = calculate("multiply", 7, 3)
     print(f"7 * 3 = {result2}")
-    
-    unused_variable = "This variable is never used"
-    
+
     print("Calculator completed successfully!")
